@@ -1,0 +1,176 @@
+/* JURA FONT, change later*/
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+/* POPPINS FONT, change later*/
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* COMMON STYLES */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
+html {
+  font-size: 62.5%;
+}
+/* END OF  COMMON STYLES */
+
+/* Mouse Graphics*/
+.mouse-outer,
+.mouse-inner {
+  border-radius: 50%;
+  position: fixed;
+  z-index: 300;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mouse-outer {
+  width: 6rem;
+  height: 6rem;
+  border: 0.1rem solid #c7a622;
+  animation: mouseCircleAnim 10s infinite linear;
+}
+@keyframes mouseCircleAnim {
+  0% {
+    width: 6rem;
+    height: 6rem;
+  }
+  25% {
+    width: 8rem;
+    height: 8rem;
+  }
+  35% {
+    width: 4rem;
+    height: 4rem;
+  }
+  70% {
+    width: 8rem;
+    height: 8rem;
+  }
+  100% {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@keyframes mouseInnerAnim {
+  0% {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  55% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  100% {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+.mouse-inner {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #9b0e0e;
+  animation: mouseInnerAnim 10s infinite linear;
+}
+/* END OF  MOUSE Graphics*/
+
+/* PAGE BACKGROUND*/
+.page-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(images/bg3.jpg) bottom right no-repeat;
+  background-size: cover;
+}
+/* END OF PAGE BACKGROUND*/
+/*Section 1*/
+.section-1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+/*Logo*/
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+/*END OF Logo*/
+/*Animated Circles*/
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.circle {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background-color: #9b0e0e;
+  align-self: center;
+  justify-self: center;
+}
+.circle-1 {
+  background: url(images/landing/circle-1.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem grey;
+  box-shadow: inset 0 0 #2e1626 10px 10px;
+  mix-blend-mode: luminosity;
+}
+.circle-2 {
+  background: url(images/landing/circle-2.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem grey;
+  box-shadow: 0 0 8px rgba(198, 49, 49, 0.714) inset;
+  -webkit-filter: blur(0.5px);
+  mix-blend-mode: luminosity;
+}
+.circle-3 {
+  background: url(images/landing/circle-3.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem grey;
+  box-shadow: 0 0 8px rgba(198, 49, 49, 0.714) inset;
+  -webkit-filter: blur(0.5px);
+  mix-blend-mode: luminosity;
+}
+.circle-4 {
+  background: url(images/landing/circle-4.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem grey;
+  box-shadow: 0 0 8px rgba(198, 49, 49, 0.714) inset;
+  -webkit-filter: blur(0.5px);
+  mix-blend-mode: luminosity;
+}
+.main-circle {
+  width: 55rem;
+  height: 55rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+}
+/*exclusion/difference/luminosity*/
+.main-circle img {
+  mix-blend-mode: exclusion;
+}
+/*END OF Animated Circles*/
