@@ -183,9 +183,110 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(images/bg3.jpg) bottom right no-repeat;
   background-size: cover;
-  /* z-index: -1; */
 }
 /* END OF PAGE BACKGROUND*/
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 200;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.half-circle,
+.half-circle-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+.half-circle:nth-child(1) {
+  background-color: #b60000;
+}
+
+.half-circle:nth-child(2) {
+  background-color: #b60000;
+}
+
+.half-circle-top {
+  background-color: #fff;
+}
+
+.progress-bar-circle {
+  width: 7.8rem;
+  height: 7.8rem;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 4rem;
+  z-index: 200;
+  transition: transform 0.5s;
+  pointer-events: none;
+}
+/* End of Progress Bar */
+/* Navigation */
+/* Menu Icon */
+.menu-icon {
+  position: fixed;
+  top: 0;
+  right: 6rem;
+  width: 12rem;
+  height: 7rem;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  z-index: 100;
+}
+.menu-icon-line {
+  width: 4rem;
+  height: 0.1rem;
+  background-color: white;
+  margin: 0.5rem 0;
+  box-shadow: 0 0.3rem 0.5rem black;
+}
+.show-menu-icon {
+  opacity: 1;
+  visibility: visible;
+}
+/* END OF Menu Icon */
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
+  z-index: 100;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+}
+.navbar-link {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 2.5rem;
+  text-shadow: 0 0.3rem 0.5rem #000;
+}
+.hide-navbar {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10rem);
+}
+/* END OF NavBar */
+/* END OF Navigation */
 /*Section 1*/
 .section-1 {
   position: relative;
@@ -441,3 +542,80 @@ html {
 /*END OF services*/
 
 /*END OF section 4 */
+/*section 5 */
+.section-5 {
+  position: relative;
+  height: 100vh;
+  flex-direction: column;
+}
+/* Form */
+.form-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  color: #9b0e0e;
+  letter-spacing: 0.3rem;
+  margin-bottom: 3rem;
+  transition: opacity 0.3s;
+}
+/* End of Form */
+.contact-form {
+  flex-direction: column;
+}
+.contact-form-input {
+  width: 60rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0.1rem solid #9b0e0e;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #aaa;
+  letter-spacing: 0.1rem;
+  height: 5rem;
+}
+.contact-form-textarea {
+  height: 20rem;
+  resize: none;
+}
+.form-submit-btn {
+  width: 20rem;
+  height: 5rem;
+  background-color: #9b0e0e;
+  border: none;
+  align-self: flex-start;
+  font-size: 1.8rem;
+  color: #fff;
+}
+/*Slideshow*/
+.slideshow {
+  display: flex;
+  width: 50rem;
+  margin-top: 10rem;
+  padding: 0 2rem;
+}
+.slideshow-link {
+  width: 20%;
+  filter: brightness(0.5);
+  transition: filter 1.5s;
+}
+.slideshow-link:nth-child(1),
+.slideshow-link:nth-child(5) {
+  transition: width 0.5s, opacity 0.5s;
+}
+.slideshow-link:nth-child(3) {
+  transition: filter 0.5s;
+}
+.slideshow-link img {
+  width: 100%;
+  padding: 0 1rem;
+}
+.faded-out {
+  opacity: 0;
+  width: 0;
+}
+.light {
+  filter: brightness(1.5);
+}
+/*END OF Slideshow*/
+/*END OF section 5 */
