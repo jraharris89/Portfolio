@@ -228,7 +228,7 @@ projects.forEach((project) => {
     }px`;
   });
   project.addEventListener("mouseleave", () => {
-    project.firstElementChild.style.top = "5rem";
+    project.firstElementChild.style.top = "2rem";
   });
 });
 //End of Projects
