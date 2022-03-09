@@ -19,7 +19,7 @@
       <div class="page-bg"></div>
       <!-- END OF Page BG-->
       <!-- Progress bar -->
-      <a href="#" class="progress-bar center">
+      <a href="#" class="progress-bar center sticky">
         <div class="half-circle"></div>
         <div class="half-circle"></div>
         <div class="half-circle-top"></div>
@@ -28,18 +28,18 @@
       <!-- END OF Progress bar -->
       <!-- Navigation -->
       <!-- Menu Icons -->
-      <div class="menu-icon center">
+      <div class="menu-icon center sticky">
         <div class="menu-icon-line"></div>
         <div class="menu-icon-line"></div>
       </div>
       <!-- END OF Menu Icons -->
       <!-- Navbar -->
       <nav class="navbar">
-        <a href="#section-1" class="navbar-link">Home</a>
-        <a href="#section-2" class="navbar-link">About me</a>
-        <a href="#section-3" class="navbar-link">Projects</a>
-        <a href="#section-4" class="navbar-link">Specialties</a>
-        <a href="#section-5" class="navbar-link">Contact</a>
+        <a href="#section-1" class="navbar-link pointer-enter">Home</a>
+        <a href="#section-2" class="navbar-link pointer-enter">About me</a>
+        <a href="#section-3" class="navbar-link pointer-enter">Projects</a>
+        <a href="#section-4" class="navbar-link pointer-enter">Specialties</a>
+        <a href="#section-5" class="navbar-link pointer-enter">Contact</a>
       </nav>
       <!-- END OF Navbar -->
       <!-- END OF Navigation -->
@@ -60,26 +60,26 @@
         </div>
         <!-- END OF Animation Circles-->
         <!-- Featured text-->
-        <h4 class="featured-text featured-text-1">Jonathon</h4>
-        <h4 class="featured-text featured-text-2">Harris</h4>
+        <h4 class="featured-text featured-text-1">Software</h4>
+        <h4 class="featured-text featured-text-2">Engineer</h4>
         <!-- END OF Featured text-->
 
         <!-- Main Button-->
-        <a href="#" class="main-btn">
-          <div class="main-btn-content center">
-            <div class="main-btn-line"></div>
-            <div class="main-btn-line"></div>
-            <div class="main-btn-line"></div>
-            <span>Projects</span>
-          </div>
-        </a>
+        <!-- <a href="#" class="main-btn"> -->
+        <!-- <div class="main-btn-content center"> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <span>Projects</span> -->
+        <!-- </div> -->
+        <!-- </a> -->
         <!-- END OF Main Button-->
       </section>
       <!-- END OF Section 1-->
       <!-- Section 2 -->
       <section class="section-2" id="section-2">
         <!-- Section 2 Heading -->
-        <h1 class="section-heading">About Me</h1>
+        <h1 class="section-heading about-me-heading">About Me</h1>
         <!-- End of Section 2 Heading -->
 
         <!-- About Me Text -->
@@ -87,14 +87,14 @@
         <!-- End of About Me Text -->
 
         <!-- Main Button -->
-        <a href="#" class="main-btn">
-          <div class="main-btn-content center">
-            <div class="main-btn-line"></div>
-            <div class="main-btn-line"></div>
-            <div class="main-btn-line"></div>
-            <span>Let's Talk</span>
-          </div>
-        </a>
+        <!-- <a href="#" class="main-btn"> -->
+        <!-- <div class="main-btn-content center"> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <div class="main-btn-line"></div> -->
+        <!-- <span>Let's Talk</span> -->
+        <!-- </div> -->
+        <!-- </a> -->
         <!-- End of Main Button -->
       </section>
       <!-- End of Section 2 -->
@@ -108,30 +108,33 @@
       <div class="projects center">
         <div class="project">
           <a
+            class="pointer-enter"
             href="https://github.com/jraharris89/CS202-Projects/tree/main/Project1"
             target="_self"
           >
-            <img src="images/projects/Project1-long.png" />
+            <img src="images/projects/Project1-long.png" alt="Project1-Link" />
           </a>
         </div>
         <div class="project">
           <a
+            class="pointer-enter"
             href="https://github.com/jraharris89/CS202-Projects/tree/main/Project2"
             target="_self"
           >
-            <img src="images/projects/Project2-long.png" />
+            <img src="images/projects/Project2-long.png" alt="Project2-Link" />
           </a>
         </div>
         <div class="project">
           <a
+            class="pointer-enter"
             href="https://github.com/jraharris89/CS202-Projects/tree/main/Project3"
             target="_self"
           >
-            <img src="images/projects/Project3.png" />
+            <img src="images/projects/Project3.png" alt="Project3-Link" />
           </a>
         </div>
       </div>
-      <!-- END OFProjects-->
+      <!-- END OF Projects-->
     </section>
     <!--END OF  Section 3 -->
     <!-- Section 4 -->
@@ -169,7 +172,7 @@
             Redundancy and Replication, SQL
           </p>
         </div>
-        <div class="service">
+        <div class="service service-4">
           <a href="#" class="service-btn pointer-enter"
             ><span>Computer Networks</span></a
           >
@@ -191,33 +194,73 @@
       <div class="form-wrapper">
         <h2 class="form-heading">Let's Connect</h2>
         <form class="contact-form center">
-          <input type="text" class="contact-form-input" placeholder="Name" />
-          <input type="email" class="contact-form-input" placeholder="Email" />
-          <input type="text" class="contact-form-input" placeholder="Subject" />
+          <label for="Name">Name</label>
+          <input
+            type="text"
+            class="contact-form-input pointer-enter"
+            placeholder="Name"
+            alt="Enter name information"
+            id="Name"
+          />
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            class="contact-form-input pointer-enter"
+            placeholder="Email"
+            alt="Enter email information"
+            id="Email"
+          />
+          <label for="Subject">Subject</label>
+          <input
+            type="text"
+            class="contact-form-input pointer-enter"
+            placeholder="Subject"
+            alt="Enter Subject of message"
+            id="Subject"
+          />
+          <label for="Message">Message</label>
           <textarea
-            class="contact-form-input contact-form-textarea"
+            class="contact-form-input contact-form-textarea pointer-enter"
             placeholder="Message"
+            alt="Enter message details"
+            id="Message"
           ></textarea>
-          <input type="submit" class="form-submit-btn" value="Send Request" />
+          <input
+            type="submit"
+            class="form-submit-btn pointer-enter"
+            value="Send Request"
+          />
         </form>
       </div>
       <!-- END OF Form -->
       <!-- Slideshow -->
       <div class="slideshow">
         <a href="#" class="slideshow-link">
-          <img src="images/social-icons/slideshow-img-1.png" />
+          <img
+            src="images/social-icons/slideshow-img-1.png"
+            alt="Twitter Icon"
+          />
         </a>
         <a href="#" class="slideshow-link">
-          <img src="images/social-icons/slideshow-img-2.png" />
+          <img
+            src="images/social-icons/slideshow-img-2.png"
+            alt="Youtube Icon"
+          />
         </a>
         <a href="#" class="slideshow-link light">
-          <img src="images/social-icons/slideshow-img-3.png" />
+          <img
+            src="images/social-icons/slideshow-img-3.png"
+            alt="Facebook Icon"
+          />
         </a>
         <a href="#" class="slideshow-link">
-          <img src="images/social-icons/slideshow-img-4.png" />
+          <img
+            src="images/social-icons/slideshow-img-4.png"
+            alt="Instagram Icon"
+          />
         </a>
         <a href="#" class="slideshow-link">
-          <img src="images/social-icons/slideshow-img-5.png" />
+          <img src="images/social-icons/slideshow-img-5.png" alt="Email Icon" />
         </a>
       </div>
       <!-- END OF Slideshow -->

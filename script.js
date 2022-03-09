@@ -1,20 +1,86 @@
 //Mouse Graphics
-const mouseOuter = document.querySelector(".mouse-outer");
-const mouseInner = document.querySelector(".mouse-inner");
+const mouseCircle = document.querySelector(".mouse-outer");
+const mouseDot = document.querySelector(".mouse-inner");
 
-const mouseFunc = (x, y) => {
-  mouseOuter.style.cssText = `top: ${y}px; left: ${x}px; opacity:1`;
+let mouseCircleBool = true;
+
+const mouseCircleFn = (x, y) => {
+  mouseCircleBool &&
+    (mouseCircle.style.cssText = `top: ${y}px; left: ${x}px; opacity:1`);
+  mouseDot.style.cssText = `top: ${y}px; left: ${x}px; opacity:1`;
 };
+
+let hoveredElPosition = [];
+
+const stickyElement = (x, y, hoveredEl) => {
+  //sticky elements
+
+  if (hoveredEl.classList.contains("sticky")) {
+    hoveredElPosition.length < 1 &&
+      (hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft]);
+
+    hoveredEl.style.cssText = `top:${y}px; left:${x}px`;
+
+    if (
+      hoveredEl.offsetTop <= hoveredElPosition[0] - 50 ||
+      hoveredEl.offsetTop >= hoveredElPosition[0] + 50 ||
+      hoveredEl.offsetLeft <= hoveredElPosition[1] - 50 ||
+      hoveredEl.offsetLeft >= hoveredElPosition[1] + 50
+    ) {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    }
+    hoveredEl.onmouseleave = () => {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    };
+  }
+  //END OF sticky elements
+};
+// Mouse Circle Transform
+const mouseCircleTransform = (hoveredEl) => {
+  if (hoveredEl.classList.contains("pointer-enter")) {
+    hoveredEl.onmousemove = () => {
+      mouseCircleBool = false;
+      mouseCircle.style.cssText = `
+      width: ${hoveredEl.getBoundingClientRect().width}px;
+      height: ${hoveredEl.getBoundingClientRect().height}px;
+      top: ${hoveredEl.getBoundingClientRect().top}px;
+      left: ${hoveredEl.getBoundingClientRect().left}px;
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: none;
+      border-radius: ${getComputedStyle(hoveredEl).borderBottomLeftRadius};
+      transition: width .5s, height .5s, top .5s, left .5s, transform .5s, border-radius .5s;
+      `;
+    };
+
+    hoveredEl.onmouseleave = () => {
+      mouseCircleBool = true;
+    };
+
+    document.onscroll = () => {
+      if (!mouseCircleBool) {
+        mouseCircle.style.top = `${hoveredEl.getBoundingClientRect().top}px`;
+      }
+    };
+  }
+};
+// End of Mouse Circle Transform
 document.body.addEventListener("mousemove", (e) => {
   let x = e.clientX;
   let y = e.clientY;
 
-  mouseFunc(x, y);
+  mouseCircleFn(x, y);
   animatedCircles(e, x, y);
+  const hoveredEl = document.elementFromPoint(x, y);
+  stickyElement(x, y, hoveredEl);
+
+  mouseCircleTransform(hoveredEl);
 });
 document.body.addEventListener("mouseleave", () => {
-  mouseOuter.style.opacity = "0";
-  mouseInner.style.opacity = "0";
+  mouseCircle.style.opacity = "0";
+  mouseDot.style.opacity = "0";
 });
 //END OF Mouse Graphics
 
@@ -140,14 +206,15 @@ menuIcon.addEventListener("click", () => {
 //END OF Navigation
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
-const aboutMeTextContent = "Test text for section-2. ";
+const aboutMeTextContent =
+  "My name is Jonathon Harris, I am a senior at Portland State University. My interests include: cybersecurity, web development, automation, and exercising. It's my dream to be employed as a software engineer. Please hire me!  ";
 
 Array.from(aboutMeTextContent).forEach((char) => {
   const span = document.createElement("span");
   span.textContent = char;
   aboutMeText.appendChild(span);
   span.addEventListener("mouseenter", (e) => {
-    e.target.style.animation = "aboutmeTextAnim 5s infinite";
+    e.target.style.animation = "aboutmeTextAnim 10s infinite";
   });
 });
 //END OF About me text
@@ -157,11 +224,11 @@ const projects = document.querySelectorAll(".project a");
 projects.forEach((project) => {
   project.addEventListener("mouseenter", () => {
     project.firstElementChild.style.top = `-${
-      project.firstElementChild.offsetHeight - project.offsetHeight + 20
+      project.firstElementChild.offsetHeight - project.offsetHeight + 30
     }px`;
   });
   project.addEventListener("mouseleave", () => {
-    project.firstElementChild.style.top = "2rem";
+    project.firstElementChild.style.top = "5rem";
   });
 });
 //End of Projects
